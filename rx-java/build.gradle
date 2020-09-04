@@ -7,5 +7,8 @@ repositories {
 }
 
 dependencies {
+
+    implementation "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
+
     testImplementation group: 'junit', name: 'junit', version: '4.12'
 }
