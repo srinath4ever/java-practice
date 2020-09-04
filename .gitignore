@@ -1,6 +1,5 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Gradle template
-.idea
 .gradle
 **/build/
 !src/**/build/
@@ -17,3 +16,23 @@ gradle-app.setting
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
 
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+bin
+build
+*.prefs
+.classpath
+.project
+.DS_Store
+.gradle/
+.idea/.gitignore
+.idea/compiler.xml
+.idea/gradle.xml
+.idea/jarRepositories.xml
+.idea/misc.xml
+.idea/sonarlint/
+.idea/vcs.xml
+build/
