@@ -8,7 +8,14 @@ repositories {
 
 dependencies {
 
+    //rxjava2
     implementation "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
+
+    //lombok
+    compileOnly "org.projectlombok:lombok:$lombokVersion"
+    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+    testCompileOnly "org.projectlombok:lombok:$lombokVersion"
+    testAnnotationProcessor "org.projectlombok:lombok:$lombokVersion"
 
     testImplementation group: 'junit', name: 'junit', version: '4.12'
 }
