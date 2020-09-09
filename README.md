@@ -2,7 +2,6 @@
 
 TODO : 
 1. Travis CI Integration with Github tags push
-2. Move all the JavaTest project code here 
 
 
 ```
