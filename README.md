@@ -5,6 +5,7 @@ TODO :
 2. Move all the JavaTest project code here 
 
 
+```
 ~:JAVATEST:~
 
 Description:
@@ -143,3 +144,4 @@ using additional storage (a StringBuilder)
 using in-place symetric element compares
 Subsets of characters in a String
 Edit (Levenshtein) Distance of two Strings
+```
