@@ -1,5 +1,9 @@
 # java-practice
 
+[![Build Status](https://travis-ci.com/SrinathRayabarapu/java-practice.svg?branch=master)](https://travis-ci.org/SrinathRayabarapu/java-practice)
+
+
+
 TODO : 
 1. Travis CI Integration with Github tags push
 
