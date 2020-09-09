@@ -1,6 +1,6 @@
-package com.practice.rxjava.utils;
+package com.rxjava.utils;
 
-import com.practice.rxjava.models.Shape;
+import com.rxjava.models.Shape;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.practice.rxjava;
+package com.rxjava;
 
 import io.reactivex.Flowable;
 import lombok.extern.slf4j.Slf4j;

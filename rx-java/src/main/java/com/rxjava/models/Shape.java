@@ -1,4 +1,4 @@
-package com.practice.rxjava.models;
+package com.rxjava.models;
 
 public class Shape {
     private String shape;

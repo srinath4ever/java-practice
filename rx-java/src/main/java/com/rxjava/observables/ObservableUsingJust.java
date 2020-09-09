@@ -1,4 +1,4 @@
-package com.practice.rxjava.observables;
+package com.rxjava.observables;
 
 import io.reactivex.Observable;
 import lombok.extern.slf4j.Slf4j;
