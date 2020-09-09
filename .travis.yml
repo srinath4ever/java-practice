@@ -3,3 +3,9 @@ jdk:
   - openjdk11
 script:
   gradle clean build
+deploy:
+  provider: releases
+  file: "FILE TO UPLOAD"
+  skip_cleanup: true
+  on:
+    tags: true
