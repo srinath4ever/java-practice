@@ -14,6 +14,8 @@ import java.util.Map;
  *
  * In how many ways can you travel to the goal on a grid with dimensions m * n?
  *
+ * Ref: https://youtu.be/oBt53YbR9Kk?t=2347
+ *
  * @author srinathr
  */
 public class GridTravellerMain {
@@ -52,7 +54,7 @@ public class GridTravellerMain {
     }
 
     /**
-     * TC: O(m+n)
+     * TC: O(m*n)
      * SC: O(m+n)
      *
      * @param m
