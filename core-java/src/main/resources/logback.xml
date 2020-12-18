@@ -35,7 +35,7 @@
 	-->
 
 	<!-- TRACE, DEBUG, INFO, WARN, ERROR -->
-	<root level="WARN">
+	<root level="DEBUG">
         <appender-ref ref="STDOUT" />
     </root>
 	

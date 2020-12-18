@@ -5,7 +5,7 @@ import java.math.BigInteger;
 /**
  * given a number, print fibinocci series till the number index, using recursion.
  *
- * Fibinocci series: 1 1 2 3 5 8 13 21 34 55
+ * Fibinocci series: 1 1 2 3 5 8 13 21 34 55...
  *
  * TC: O(2^n)
  * SC: O(n)

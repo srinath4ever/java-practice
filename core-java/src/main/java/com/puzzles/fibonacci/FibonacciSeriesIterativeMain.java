@@ -5,7 +5,7 @@ import java.math.BigInteger;
 /**
  * Print Fibinocci series example with simple loop - no recursion!
  * 
- * 0 1 1 2 3 5 8 13 21 34 55 
+ * Fibinocci series : 1 1 2 3 5 8 13 21 34 55...
  * 
  * @author Srinath.Rayabarapu
  */
