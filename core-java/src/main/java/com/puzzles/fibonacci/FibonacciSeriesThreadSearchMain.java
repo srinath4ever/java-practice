@@ -11,14 +11,14 @@ package com.puzzles.fibonacci;
 public class FibonacciSeriesThreadSearchMain {
 
 	/*//default fibonacci series -
-	public static int findFibinocciNumber(int index) {
+	public static int fibinocciNumberWithIteration(int index) {
 		if(index == 1 ){
 			return 0;
 		}
 		if(index == 2 ){
 			return 1;
 		}
-		return (findFibinocciNumber(index-1)+findFibinocciNumber(index-2));
+		return (fibinocciNumberWithIteration(index-1)+fibinocciNumberWithIteration(index-2));
 	}
 	*/
 	

@@ -1,75 +1,75 @@
 package com.puzzles.fibonacci;
 
+import java.math.BigInteger;
 import java.time.Clock;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * program to demo memorization(caching of the values) and calculating fibonacci series efficiently.
+ * program to calculate fibonacci series using memoization technique.
+ *
  * Also compares different approaches
  * 
- * Fibinocci series :0 1 1 2 3 5 8...
- * 
- * f(n) = {	f(n-1) + f(n-2) if n>1
- * 			n 				if n=0,1
- * 
- * @author Srinath.Rayabarapu
+ * Fibinocci series : 1 1 2 3 5 8...
  *
+ * TC: O(n)
+ * SC: O(n)
+ *
+ * @author Srinath.Rayabarapu
  */
 public class FibonacciSeriesMemoizationMain {
 
 	public static void main(String[] args) {
 		
-		int input = 45;
-		
+		int input = 47;
+
+		fibinocciNumberWithMemoization(input, new HashMap<>());
+
+		compareDifferentFibinocciSerieses(input);
+	}
+
+	private static void compareDifferentFibinocciSerieses(int input) {
 		Clock clock = Clock.systemDefaultZone();
 
-		Map<Integer, Integer> cache = new HashMap<>();
-
 		long startingTime = clock.millis();//equivalent to System.currentTimeMillis()
-		int calculateCachedFibinocciNumber = findCachedFibinocciNumber(input, cache);
+		BigInteger calculateCachedFibinocciNumber = fibinocciNumberWithMemoization(input, new HashMap<>());
 		long endingTime = clock.millis();
 		System.out.println("Memorization - Total time in millis : " + (endingTime-startingTime));
 		System.out.println(calculateCachedFibinocciNumber);
 
 		startingTime = clock.millis();
-		calculateCachedFibinocciNumber = new FibonacciSeriesIterativeMain().findFibinocciNumber(input);
+		calculateCachedFibinocciNumber = new FibonacciSeriesIterativeMain().fibinocciNumberWithIteration(input);
 		endingTime = clock.millis();
 		System.out.println("Simple Loop - Total time in millis : " + (endingTime-startingTime));
 		System.out.println(calculateCachedFibinocciNumber);
 
 		startingTime = clock.millis();
-		calculateCachedFibinocciNumber = new FibonacciSeriesRecursionMain().findFibinocciNumber(input);
+		calculateCachedFibinocciNumber = new FibonacciSeriesRecursionMain().fibinocciNumberWithRecursion(input);
 		endingTime = clock.millis();
 		System.out.println("Recursion - Total time in millis : " + (endingTime-startingTime));
 		System.out.println(calculateCachedFibinocciNumber);
-		
 	}
 
 	/**
-	 * method demos memorization via a HashMap
+	 * Memoization with HashMap - Used BigInteger for avoiding over flow
 	 * 
 	 * @param num
 	 * @param cache
 	 * @return
 	 */
-	public static int findCachedFibinocciNumber(int num, Map<Integer, Integer> cache) {
+	public static BigInteger fibinocciNumberWithMemoization(int num, Map<Integer, BigInteger> cache) {
 		
 		if(cache.get(num) != null){
 			return cache.get(num);
 		}
-		
-		int result = 0;
-		
-		if(num == 1 || num == 2){
-			result = num-1;
-		} else {
-			result = findCachedFibinocciNumber(num-1, cache) + findCachedFibinocciNumber(num-2, cache);
+
+		if(num <= 2) {
+			return BigInteger.ONE;
 		}
+
+		cache.put(num, fibinocciNumberWithMemoization(num-1, cache).add(fibinocciNumberWithMemoization(num-2, cache)));
 		
-		cache.put(num, result);
-		
-		return result;
+		return cache.get(num);
 	}
 	
 }

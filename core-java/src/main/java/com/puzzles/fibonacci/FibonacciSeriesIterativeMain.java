@@ -1,5 +1,7 @@
 package com.puzzles.fibonacci;
 
+import java.math.BigInteger;
+
 /**
  * Print Fibinocci series example with simple loop - no recursion!
  * 
@@ -11,19 +13,20 @@ public class FibonacciSeriesIterativeMain {
 	
 	public static void main(String[] args) {
 		for(int i=1; i<=15; i++){
-			System.out.print(findFibinocciNumber(i)+" ");
+			System.out.print(fibinocciNumberWithIteration(i)+" ");
 		}
 	}
 
-	public static int findFibinocciNumber(int num) {
+	public static BigInteger fibinocciNumberWithIteration(int num) {
 
-		if(num == 1 || num == 2){
-			return num-1;
+		if(num <= 2){
+			return BigInteger.ONE;
 		}
 
-		int temp1=0, temp2=1, fibinocci=0;
+		BigInteger temp1 = BigInteger.ONE, temp2 = BigInteger.ONE;
+		BigInteger fibinocci = BigInteger.ZERO;
 		for(int i=3; i<=num; i++){
-			fibinocci = temp1+temp2;
+			fibinocci = temp1.add(temp2);
 			temp1 = temp2;
 			temp2 = fibinocci;
 		}

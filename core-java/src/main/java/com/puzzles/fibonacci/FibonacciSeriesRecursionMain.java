@@ -1,5 +1,7 @@
 package com.puzzles.fibonacci;
 
+import java.math.BigInteger;
+
 /**
  * given a number, print fibinocci series till the number index, using recursion.
  *
@@ -15,14 +17,14 @@ public class FibonacciSeriesRecursionMain {
 	
 	public static void main(String[] args) {
 		for (int i = 1; i <= 10; i++)
-			System.out.println(findFibinocciNumber(i));
+			System.out.println(fibinocciNumberWithRecursion(i));
 	}
 	
-	public static int findFibinocciNumber(int index) {
+	public static BigInteger fibinocciNumberWithRecursion(int index) {
 		if(index <= 2){
-			return 1;
+			return BigInteger.ONE;
 		}
-		return (findFibinocciNumber(index-1) + findFibinocciNumber(index-2));
+		return (fibinocciNumberWithRecursion(index-1).add(fibinocciNumberWithRecursion(index-2)));
 	}
 	
 }
