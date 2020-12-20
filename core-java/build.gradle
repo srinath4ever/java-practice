@@ -8,15 +8,6 @@ repositories {
 
 dependencies {
 
-    // hibernate
-    implementation 'org.hibernate:hibernate-core:4.3.6.Final'
-    implementation 'org.hibernate:hibernate-entitymanager:4.3.6.Final'
-    implementation 'org.hibernate:hibernate-osgi:4.3.6.Final'
-    implementation 'org.hibernate:hibernate-envers:4.3.6.Final'
-    implementation 'org.hibernate:hibernate-c3p0:4.3.6.Final'
-    implementation 'org.hibernate:hibernate-proxool:4.3.6.Final'
-    implementation 'org.hibernate:hibernate-ehcache:4.3.6.Final'
-
     // mockito
     implementation 'org.mockito:mockito-all:2.0.2-beta'
 
