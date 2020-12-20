@@ -1,6 +1,8 @@
 package com.dsalgo.linkedlist;
 
-import com.core.comparable.Employee;
+
+
+import com.dsalgo.dtos.Employee;
 
 import java.util.Objects;
 

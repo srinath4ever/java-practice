@@ -1,6 +1,8 @@
 package com.dsalgo.search;
 
-import com.util.LogUtil;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * program for binary search - Time Complexity: O(log n)
@@ -17,16 +19,18 @@ import com.util.LogUtil;
  * @author Srinath.Rayabarapu
  */
 public class BinarySearchMain {
+
+	private static final Logger LOG = LoggerFactory.getLogger(BinarySearchMain.class);
 	
 	public static void main(String[] args) {
 
 		int[] intArraySorted = {1, 2, 4, 6, 8, 10, 14, 21, 56, 90};
 
 		boolean isFound = findBSRecursive(intArraySorted, 0, intArraySorted.length - 1, 10);
-		LogUtil.info("Is element found : " + isFound);
+		LOG.info("Is element found : " + isFound);
 
 		isFound = findBSIterative(intArraySorted, 0, intArraySorted.length - 1, 90);
-		LogUtil.info("Is element found : " + isFound);
+		LOG.info("Is element found : " + isFound);
 
 	}
 

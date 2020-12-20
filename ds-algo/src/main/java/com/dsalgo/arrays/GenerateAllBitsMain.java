@@ -1,6 +1,9 @@
 package com.dsalgo.arrays;
 
-import com.util.LogUtil;
+
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 
@@ -13,6 +16,8 @@ import java.util.Arrays;
  */
 public class GenerateAllBitsMain {
 
+    private static final Logger LOG = LoggerFactory.getLogger(GenerateAllBitsMain.class);
+
     public static void main(String[] args) {
         int[] inputArray = new int[3];
         binary(inputArray, inputArray.length);
@@ -20,7 +25,7 @@ public class GenerateAllBitsMain {
 
     private static void binary(int[] inputArray, int index) {
         if(index < 1){
-            LogUtil.info(Arrays.toString(inputArray));
+            LOG.info(Arrays.toString(inputArray));
         } else {
             inputArray[index-1] = 0;
             binary(inputArray, index-1);

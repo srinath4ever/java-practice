@@ -1,6 +1,7 @@
 package com.dsalgo.stacksnqueues;
 
-import com.util.LogUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Given a Linkedlist, implement a Stack operations push and pop.
@@ -35,6 +36,8 @@ public class StackImplUsingLinkedListMain {
 
 class LinkedListStack<T>{
 
+    private static final Logger LOG = LoggerFactory.getLogger(LinkedListStack.class);
+
     private Node<T> head;
 
     public Node<T> pop(){
@@ -61,7 +64,7 @@ class LinkedListStack<T>{
                 head = head.getNext();
             }
         } else{
-            LogUtil.info("List is empty!");
+            LOG.info("List is empty!");
         }
         head = temp;
     }

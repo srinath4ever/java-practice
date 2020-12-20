@@ -4,8 +4,9 @@
 
 
 
-TODO : 
-1. Travis CI Integration with Github tags push
+TODO :
+1. Travis CI Integration with Github tags push - explore?
+2. 
 
 
 ```

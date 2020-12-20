@@ -1,6 +1,8 @@
 package com.dsalgo.arrays;
 
-import com.util.LogUtil;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * given an array, check whether it is sorted using recursion
@@ -11,15 +13,17 @@ import com.util.LogUtil;
  */
 public class CheckArraySortedWithRecursionMain {
 
+    private static final Logger LOG = LoggerFactory.getLogger(CheckArraySortedWithRecursionMain.class);
+
     public static void main(String[] args) {
 
         int[] inputArray1 = {1, 5, 2, 99, 4, 55, 12, 1001, 43, 3};
         boolean isSorted = checkArraySortedRecursivelyBookish(inputArray1, 0);
-        LogUtil.info("Sorted : " + isSorted);
+        LOG.info("Sorted : " + isSorted);
 
         int[] inputArray2 = {1, 5, 12, 23, 56, 78, 101, 197, 228};
         isSorted = checkArraySortedRecursivelyBookish(inputArray2, 0);
-        LogUtil.info("Sorted : " + isSorted);
+        LOG.info("Sorted : " + isSorted);
 
     }
 

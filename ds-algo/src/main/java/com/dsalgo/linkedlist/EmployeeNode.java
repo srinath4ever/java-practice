@@ -1,6 +1,7 @@
 package com.dsalgo.linkedlist;
 
-import com.core.comparable.Employee;
+
+import com.dsalgo.dtos.Employee;
 
 /**
  * node class for both single and double linked lists
