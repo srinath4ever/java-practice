@@ -341,8 +341,7 @@ public class Trie<C extends CharSequence> implements ITree<C> {
          *            node of the new node.
          * @param character
          *            which represents this node.
-         * @param isWord
-         *            signifies if the node represents a word.
+         *
          * @return Node which was created.
          */
         public Node createNewNode(Node parent, Character character, boolean type);
@@ -368,17 +367,17 @@ public class Trie<C extends CharSequence> implements ITree<C> {
                 else
                     string = temp;
             }
-            builder.append(prefix + (isTail ? "└── " : "├── ") + ((node.isWord == true) ? 
+            builder.append(prefix + (isTail ? "|-- " : "|-- ") + ((node.isWord == true) ?
                               ("(" + node.character + ") " + string)
                           : 
                               node.character) + "\n"
             );
             if (node.children != null) {
                 for (int i = 0; i < node.childrenSize - 1; i++) {
-                    builder.append(getString(node.children[i], prefix + (isTail ? "    " : "│   "), string, false));
+                    builder.append(getString(node.children[i], prefix + (isTail ? "    " : "|   "), string, false));
                 }
                 if (node.childrenSize >= 1) {
-                    builder.append(getString(node.children[node.childrenSize - 1], prefix + (isTail ? "    " : "│   "), string, true));
+                    builder.append(getString(node.children[node.childrenSize - 1], prefix + (isTail ? "    " : "|   "), string, true));
                 }
             }
             return builder.toString();

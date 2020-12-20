@@ -3,7 +3,7 @@ package com.dpattern.structural.proxy;
 /**
  * One of the advantages of Proxy pattern is security.
  *
- * Proxy pattern is used when we need to create a wrapper to cover the main object’s complexity
+ * Proxy pattern is used when we need to create a wrapper to cover the main object's complexity
  * from the client.
  *
  * @author Srinath.Rayabarapu

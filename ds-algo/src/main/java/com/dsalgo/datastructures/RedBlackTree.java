@@ -4,9 +4,9 @@ import java.util.List;
 import java.util.*;
 
 /**
- * A red–black tree is a type of self-balancing binary search tree, a data
+ * A red-black tree is a type of self-balancing binary search tree, a data
  * structure used in computer science, typically to implement associative
- * arrays. A red–black tree is a binary search tree that inserts and deletes in
+ * arrays. A red-black tree is a binary search tree that inserts and deletes in
  * such a way that the tree is always reasonably balanced. Red-black trees are
  * often compared with AVL trees. AVL trees are more rigidly balanced, they are
  * faster than red-black trees for lookup intensive applications. However,
@@ -513,7 +513,7 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> i
         private static <T extends Comparable<T>> String getString(RedBlackNode<T> node, String prefix, boolean isTail) {
             StringBuilder builder = new StringBuilder();
 
-            builder.append(prefix + (isTail ? "└── " : "├── ") + "(" + ((node.color == RED) ? "RED" : "BLACK") + ") " + node.id
+            builder.append(prefix + (isTail ? "|-- " : "|-- ") + "(" + ((node.color == RED) ? "RED" : "BLACK") + ") " + node.id
                            + " [parent=" + ((node.parent!=null)?node.parent.id:"NULL") 
                            + " grand-parent=" + ((node.parent!=null && node.parent.parent!=null)?node.parent.parent.id:"NULL")
                            + "]\n"
@@ -528,12 +528,12 @@ public class RedBlackTree<T extends Comparable<T>> extends BinarySearchTree<T> i
             }
             if (children != null) {
                 for (int i = 0; i < children.size() - 1; i++) {
-                    builder.append(getString((RedBlackNode<T>) children.get(i), prefix + (isTail ? "    " : "│   "),
+                    builder.append(getString((RedBlackNode<T>) children.get(i), prefix + (isTail ? "    " : "|   "),
                             false));
                 }
                 if (children.size() >= 1) {
                     builder.append(getString((RedBlackNode<T>) children.get(children.size() - 1), prefix
-                            + (isTail ? "    " : "│   "), true));
+                            + (isTail ? "    " : "|   "), true));
                 }
             }
 

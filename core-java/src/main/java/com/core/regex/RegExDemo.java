@@ -18,14 +18,9 @@ public class RegExDemo {
 	(?=\S+$)          # no whitespace allowed in the entire string
 	.{8,}             # anything, at least eight places though
 	$                 # end-of-string
-	
  	 */
 	 
 	public static void main(String[] args) {
-		RegExDemo exDemo = new RegExDemo();
-//		boolean result = exDemo.validate("Srinath7%");
-		//boolean result = exDemo.validate("a�4");
-		//System.out.println(result);
 		
 		String emailIdRegex = "^[\\w_.]+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$";
 		Pattern pattern = Pattern.compile(emailIdRegex);

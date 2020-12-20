@@ -915,7 +915,7 @@ public abstract class QuadTree<G extends QuadTree.GeometricObject> {
         private static <T extends GeometricObject> String getString(QuadNode<T> node, String prefix, boolean isTail) {
             StringBuilder builder = new StringBuilder();
 
-            builder.append(prefix + (isTail ? "└── " : "├── ") + " node={" + node.toString() + "}\n");
+            builder.append(prefix + (isTail ? "|-- " : "|-- ") + " node={" + node.toString() + "}\n");
             List<QuadNode<T>> children = null;
             if (node.northWest != null || node.northEast != null || node.southWest != null || node.southEast != null) {
                 children = new ArrayList<QuadNode<T>>(4);
@@ -926,10 +926,10 @@ public abstract class QuadTree<G extends QuadTree.GeometricObject> {
             }
             if (children != null) {
                 for (int i = 0; i < children.size() - 1; i++) {
-                    builder.append(getString(children.get(i), prefix + (isTail ? "    " : "│   "), false));
+                    builder.append(getString(children.get(i), prefix + (isTail ? "    " : "|   "), false));
                 }
                 if (children.size() >= 1) {
-                    builder.append(getString(children.get(children.size() - 1), prefix + (isTail ? "    " : "│   "), true));
+                    builder.append(getString(children.get(children.size() - 1), prefix + (isTail ? "    " : "|   "), true));
                 }
             }
 

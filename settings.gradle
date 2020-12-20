@@ -1,7 +1,7 @@
 rootProject.name = 'java-practice'
 
-include 'rx-java'
 include 'core-java'
+include 'rx-java'
 include 'data-layer'
 include 'design-patterns'
 include 'ds-algo'

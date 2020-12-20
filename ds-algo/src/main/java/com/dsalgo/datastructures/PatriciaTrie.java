@@ -526,17 +526,17 @@ public class PatriciaTrie<C extends CharSequence> implements ITree<C> {
             if (node.string != null) thisString = String.valueOf(node.string);
             String fullString = ((previousString != null) ? previousString : "") + thisString;
             builder.append(prefix
-                    + (isTail ? "└── " : "├── ")
+                    + (isTail ? "|-- " : "|-- ")
                     + ((thisString != null) ? "[" + ((node.type == WHITE) ? "white" : "black") + "] "
                             + ((node.type == WHITE) ? "(" + thisString + ") " + fullString : thisString) : "["
                             + ((node.type == WHITE) ? "white" : "black") + "]") + "\n");
             if (node.children != null) {
                 for (int i = 0; i < node.getChildrenSize() - 1; i++) {
-                    builder.append(getString(node.getChild(i), prefix + (isTail ? "    " : "│   "), thisString, false));
+                    builder.append(getString(node.getChild(i), prefix + (isTail ? "    " : "|   "), thisString, false));
                 }
                 if (node.getChildrenSize() >= 1) {
                     builder.append(getString(node.getChild(node.getChildrenSize() - 1), prefix
-                            + (isTail ? "    " : "│   "), thisString, true));
+                            + (isTail ? "    " : "|   "), thisString, true));
                 }
             }
             return builder.toString();

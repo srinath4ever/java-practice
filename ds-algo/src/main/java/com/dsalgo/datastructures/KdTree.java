@@ -643,10 +643,10 @@ public class KdTree<T extends KdTree.XYZPoint> {
                 String side = "left";
                 if (node.parent.greater != null && node.id.equals(node.parent.greater.id))
                     side = "right";
-                builder.append(prefix + (isTail ? "└── " : "├── ") + "[" + side + "] " + "depth=" + node.depth + " id="
+                builder.append(prefix + (isTail ? "|-- " : "|-- ") + "[" + side + "] " + "depth=" + node.depth + " id="
                         + node.id + "\n");
             } else {
-                builder.append(prefix + (isTail ? "└── " : "├── ") + "depth=" + node.depth + " id=" + node.id + "\n");
+                builder.append(prefix + (isTail ? "|-- " : "|-- ") + "depth=" + node.depth + " id=" + node.id + "\n");
             }
             List<KdNode> children = null;
             if (node.lesser != null || node.greater != null) {
@@ -658,10 +658,10 @@ public class KdTree<T extends KdTree.XYZPoint> {
             }
             if (children != null) {
                 for (int i = 0; i < children.size() - 1; i++) {
-                    builder.append(getString(children.get(i), prefix + (isTail ? "    " : "│   "), false));
+                    builder.append(getString(children.get(i), prefix + (isTail ? "    " : "|   "), false));
                 }
                 if (children.size() >= 1) {
-                    builder.append(getString(children.get(children.size() - 1), prefix + (isTail ? "    " : "│   "),
+                    builder.append(getString(children.get(children.size() - 1), prefix + (isTail ? "    " : "|   "),
                             true));
                 }
             }

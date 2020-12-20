@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Floyd–Warshall algorithm is a graph analysis algorithm for finding shortest
+ * Floyd-Warshall algorithm is a graph analysis algorithm for finding shortest
  * paths in a weighted graph (with positive or negative edge weights).
  * 
  * Worst case: O(V^3)

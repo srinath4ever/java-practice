@@ -510,9 +510,9 @@ public class SuffixTree<C extends CharSequence> {
                 int index = string.indexOf(tree.END_SEQ_CHAR);
                 if (index >= 0)
                     string = string.substring(0, index + 1);
-                builder.append(prefix + (isTail ? "└── " : "├── ") + "(" + value + ") " + string + "\n");
+                builder.append(prefix + (isTail ? "|-- " : "|-- ") + "(" + value + ") " + string + "\n");
             } else {
-                builder.append(prefix + (isTail ? "└── " : "├── ") + "(" + 0 + ")" + "\n");
+                builder.append(prefix + (isTail ? "|-- " : "|-- ") + "(" + 0 + ")" + "\n");
             }
 
             if (tree.edgeMap.size() > 0) {
@@ -525,11 +525,11 @@ public class SuffixTree<C extends CharSequence> {
                 if (children.size() > 0) {
                     for (int i = 0; i < children.size() - 1; i++) {
                         Edge<C> edge = children.get(i);
-                        builder.append(getString(tree, edge, prefix + (isTail ? "    " : "│   "), false));
+                        builder.append(getString(tree, edge, prefix + (isTail ? "    " : "|   "), false));
                     }
                     if (children.size() >= 1) {
                         Edge<C> edge = children.get(children.size() - 1);
-                        builder.append(getString(tree, edge, prefix + (isTail ? "    " : "│   "), true));
+                        builder.append(getString(tree, edge, prefix + (isTail ? "    " : "|   "), true));
                     }
                 }
             }

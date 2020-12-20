@@ -351,7 +351,7 @@ public class AVLTree<T extends Comparable<T>> extends BinarySearchTree<T> implem
         private static <T extends Comparable<T>> String getString(AVLNode<T> node, String prefix, boolean isTail) {
             StringBuilder builder = new StringBuilder();
 
-            builder.append(prefix + (isTail ? "└── " : "├── ") + "(" + node.height + ") " + node.id + "\n");
+            builder.append(prefix + (isTail ? "|-- " : "|-- ") + "(" + node.height + ") " + node.id + "\n");
             List<Node<T>> children = null;
             if (node.lesser != null || node.greater != null) {
                 children = new ArrayList<Node<T>>(2);
@@ -362,11 +362,11 @@ public class AVLTree<T extends Comparable<T>> extends BinarySearchTree<T> implem
             }
             if (children != null) {
                 for (int i = 0; i < children.size() - 1; i++) {
-                    builder.append(getString((AVLNode<T>) children.get(i), prefix + (isTail ? "    " : "│   "), false));
+                    builder.append(getString((AVLNode<T>) children.get(i), prefix + (isTail ? "    " : "|   "), false));
                 }
                 if (children.size() >= 1) {
                     builder.append(getString((AVLNode<T>) children.get(children.size() - 1), prefix
-                            + (isTail ? "    " : "│   "), true));
+                            + (isTail ? "    " : "|   "), true));
                 }
             }
 

@@ -128,7 +128,7 @@ public class IntervalTree<O extends Object> {
         private static <O extends Object> String getString(Interval<O> interval, String prefix, boolean isTail) {
             StringBuilder builder = new StringBuilder();
 
-            builder.append(prefix + (isTail ? "└── " : "├── ") + interval.toString() + "\n");
+            builder.append(prefix + (isTail ? "|-- " : "|-- ") + interval.toString() + "\n");
             List<Interval<O>> children = new ArrayList<Interval<O>>();
             if (interval.left != null)
                 children.add(interval.left);
@@ -136,10 +136,10 @@ public class IntervalTree<O extends Object> {
                 children.add(interval.right);
             if (children.size() > 0) {
                 for (int i = 0; i < children.size() - 1; i++) {
-                    builder.append(getString(children.get(i), prefix + (isTail ? "    " : "│   "), false));
+                    builder.append(getString(children.get(i), prefix + (isTail ? "    " : "|   "), false));
                 }
                 if (children.size() > 0) {
-                    builder.append(getString(children.get(children.size() - 1), prefix + (isTail ? "    " : "│   "),
+                    builder.append(getString(children.get(children.size() - 1), prefix + (isTail ? "    " : "|   "),
                             true));
                 }
             }
@@ -354,11 +354,6 @@ public class IntervalTree<O extends Object> {
 
         /**
          * Query inside this data object.
-         * 
-         * @param start
-         *            of range to query for.
-         * @param end
-         *            of range to query for.
          * @return Data queried for or NULL if it doesn't match the query.
          */
         public IntervalData<O> query(long index) {

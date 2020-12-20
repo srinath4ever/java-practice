@@ -5,7 +5,7 @@ package com.puzzles;
  * can reach the top.
  * <p>
  *
- * Count ways to reach the n’th stair
+ * Count ways to reach the n'th stair
  * https://www.geeksforgeeks.org/count-ways-reach-nth-stair/
  *
  * @author Srinath.Rayabarapu

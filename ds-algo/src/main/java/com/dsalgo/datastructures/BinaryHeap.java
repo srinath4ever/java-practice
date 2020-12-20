@@ -199,9 +199,7 @@ public interface BinaryHeap<T extends Comparable<T>> extends IHeap<T> {
 
         /**
          * Validate the node for the heap invariants.
-         * 
-         * @param node
-         *            to validate for.
+         *
          * @return True if node is valid.
          */
         private boolean validateNode(int index) {
@@ -353,7 +351,7 @@ public interface BinaryHeap<T extends Comparable<T>> extends IHeap<T> {
                 StringBuilder builder = new StringBuilder();
 
                 T value = tree.array[index];
-                builder.append(prefix + (isTail ? "└── " : "├── ") + value + "\n");
+                builder.append(prefix + (isTail ? "|-- " : "|-- ") + value + "\n");
                 List<Integer> children = null;
                 int leftIndex = getLeftIndex(index);
                 int rightIndex = getRightIndex(index);
@@ -368,11 +366,11 @@ public interface BinaryHeap<T extends Comparable<T>> extends IHeap<T> {
                 }
                 if (children != null) {
                     for (int i = 0; i < children.size() - 1; i++) {
-                        builder.append(getString(tree, children.get(i), prefix + (isTail ? "    " : "│   "), false));
+                        builder.append(getString(tree, children.get(i), prefix + (isTail ? "    " : "|   "), false));
                     }
                     if (children.size() >= 1) {
                         builder.append(getString(tree, children.get(children.size() - 1), prefix
-                                + (isTail ? "    " : "│   "), true));
+                                + (isTail ? "    " : "|   "), true));
                     }
                 }
 
@@ -891,7 +889,7 @@ public interface BinaryHeap<T extends Comparable<T>> extends IHeap<T> {
             private static <T extends Comparable<T>> String getString(Node<T> node, String prefix, boolean isTail) {
                 StringBuilder builder = new StringBuilder();
 
-                builder.append(prefix + (isTail ? "└── " : "├── ") + node.value + "\n");
+                builder.append(prefix + (isTail ? "|-- " : "|-- ") + node.value + "\n");
                 List<Node<T>> children = null;
                 if (node.left != null || node.right != null) {
                     children = new ArrayList<Node<T>>(2);
@@ -902,11 +900,11 @@ public interface BinaryHeap<T extends Comparable<T>> extends IHeap<T> {
                 }
                 if (children != null) {
                     for (int i = 0; i < children.size() - 1; i++) {
-                        builder.append(getString(children.get(i), prefix + (isTail ? "    " : "│   "), false));
+                        builder.append(getString(children.get(i), prefix + (isTail ? "    " : "|   "), false));
                     }
                     if (children.size() >= 1) {
                         builder.append(getString(children.get(children.size() - 1),
-                                prefix + (isTail ? "    " : "│   "), true));
+                                prefix + (isTail ? "    " : "|   "), true));
                     }
                 }
 

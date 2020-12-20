@@ -192,7 +192,7 @@ public class TrieMap<K extends CharSequence, V> implements Trie.INodeCreator, IM
             if (node instanceof TrieMapNode) {
                 TrieMapNode<V> hashNode = (TrieMapNode<V>) node;
                 builder.append(prefix
-                        + (isTail ? "└── " : "├── ")
+                        + (isTail ? "|-- " : "|-- ")
                         + ((node.isWord) ? 
                               ("(" + String.valueOf(node.character) + ") " + string + " = {" + hashNode.value + "}")
                           : 
@@ -201,11 +201,11 @@ public class TrieMap<K extends CharSequence, V> implements Trie.INodeCreator, IM
             }
             if (node.getChildrenSize() > 0) {
                 for (int i = 0; i < node.getChildrenSize() - 1; i++) {
-                    builder.append(getString(node.getChild(i), prefix + (isTail ? "    " : "│   "), string, false));
+                    builder.append(getString(node.getChild(i), prefix + (isTail ? "    " : "|   "), string, false));
                 }
                 if (node.getChildrenSize() >= 1) {
                     builder.append(getString(node.getChild(node.getChildrenSize() - 1), prefix
-                            + (isTail ? "    " : "│   "), string, true));
+                            + (isTail ? "    " : "|   "), string, true));
                 }
             }
 

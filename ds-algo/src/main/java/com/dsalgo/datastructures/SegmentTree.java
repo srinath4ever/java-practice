@@ -617,9 +617,6 @@ public abstract class SegmentTree<D extends SegmentTree.Data> {
 
             /**
              * Interval data list which should all be unique
-             * 
-             * @param list
-             *            of interval data objects
              */
             public IntervalData(long start, long end, Set<O> set) {
                 super(start, end);
@@ -810,7 +807,7 @@ public abstract class SegmentTree<D extends SegmentTree.Data> {
         private static <D extends SegmentTree.Data> String getString(Segment<D> segment, String prefix, boolean isTail) {
             StringBuilder builder = new StringBuilder();
 
-            builder.append(prefix + (isTail ? "└── " : "├── ") + segment.toString() + "\n");
+            builder.append(prefix + (isTail ? "|-- " : "|-- ") + segment.toString() + "\n");
             List<Segment<D>> children = new ArrayList<Segment<D>>();
             if (segment.segments != null) {
                 for (Segment<D> c : segment.segments)
@@ -818,10 +815,10 @@ public abstract class SegmentTree<D extends SegmentTree.Data> {
             }
             if (children != null) {
                 for (int i = 0; i < children.size() - 1; i++) {
-                    builder.append(getString(children.get(i), prefix + (isTail ? "    " : "│   "), false));
+                    builder.append(getString(children.get(i), prefix + (isTail ? "    " : "|   "), false));
                 }
                 if (children.size() > 1) {
-                    builder.append(getString(children.get(children.size() - 1), prefix + (isTail ? "    " : "│   "),
+                    builder.append(getString(children.get(children.size() - 1), prefix + (isTail ? "    " : "|   "),
                             true));
                 }
             }

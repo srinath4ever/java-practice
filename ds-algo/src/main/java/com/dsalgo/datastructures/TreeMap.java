@@ -166,7 +166,7 @@ public class TreeMap<K extends Comparable<K>, V> implements BinarySearchTree.INo
         private static <K extends Comparable<K>, V> String getString(TreeMapNode<K, V> node, String prefix, boolean isTail) {
             StringBuilder builder = new StringBuilder();
 
-            builder.append(prefix + (isTail ? "└── " : "├── ") + ((node.id != null) ? (node.id + " = " + node.value) : node.id) + "\n");
+            builder.append(prefix + (isTail ? "|-- " : "|-- ") + ((node.id != null) ? (node.id + " = " + node.value) : node.id) + "\n");
             List<TreeMapNode<K, V>> children = null;
             if (node.lesser != null || node.greater != null) {
                 children = new ArrayList<TreeMapNode<K, V>>(2);
@@ -175,10 +175,10 @@ public class TreeMap<K extends Comparable<K>, V> implements BinarySearchTree.INo
             }
             if (children != null) {
                 for (int i = 0; i < children.size() - 1; i++) {
-                    builder.append(getString((TreeMapNode<K, V>) children.get(i), prefix + (isTail ? "    " : "│   "), false));
+                    builder.append(getString((TreeMapNode<K, V>) children.get(i), prefix + (isTail ? "    " : "|   "), false));
                 }
                 if (children.size() >= 1) {
-                    builder.append(getString((TreeMapNode<K, V>) children.get(children.size() - 1), prefix + (isTail ? "    " : "│   "), true));
+                    builder.append(getString((TreeMapNode<K, V>) children.get(children.size() - 1), prefix + (isTail ? "    " : "|   "), true));
                 }
             }
 

@@ -200,18 +200,18 @@ public class RadixTrie<K extends CharSequence, V> implements PatriciaTrie.INodeC
             if (node instanceof RadixNode) {
                 RadixNode<K,V> radix = (RadixNode<K,V>) node;
                 builder.append(prefix
-                        + (isTail ? "└── " : "├── ")
+                        + (isTail ? "|-- " : "|-- ")
                         + ((radix.string != null) ? "(" + String.valueOf(radix.string) + ") " + "["
                                 + ((node.type == PatriciaTrie.WHITE) ? "WHITE" : "BLACK") + "] " + string
                                 + ((radix.value != null) ? " = " + radix.value : "") : "[" + node.type + "]") + "\n");
             }
             if (node.getChildrenSize() > 0) {
                 for (int i = 0; i < node.getChildrenSize() - 1; i++) {
-                    builder.append(getString(node.getChild(i), prefix + (isTail ? "    " : "│   "), string, false));
+                    builder.append(getString(node.getChild(i), prefix + (isTail ? "    " : "|   "), string, false));
                 }
                 if (node.getChildrenSize() >= 1) {
                     builder.append(getString(node.getChild(node.getChildrenSize() - 1), prefix
-                            + (isTail ? "    " : "│   "), string, true));
+                            + (isTail ? "    " : "|   "), string, true));
                 }
             }
             return builder.toString();
