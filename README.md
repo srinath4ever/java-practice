@@ -6,7 +6,9 @@
 
 TODO :
 1. Travis CI Integration with Github tags push - explore?
-2. 
+2. Have a common shared logging - remove duplicate config files
+3. Fix the shared libraries and keep only scoped ones
+
 
 
 ```

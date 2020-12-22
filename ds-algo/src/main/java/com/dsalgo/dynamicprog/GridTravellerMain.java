@@ -1,4 +1,4 @@
-package com.dsalgo.recursion;
+package com.dsalgo.dynamicprog;
 
 
 import org.slf4j.Logger;
@@ -30,9 +30,7 @@ public class GridTravellerMain {
         Map<String, BigInteger> cache = new HashMap<>();
 
         LOG.info("...");
-
         LOG.info("Number of ways in simple prog : {}", gridTravelSimple(m, n));
-
         LOG.info("Number of ways in memoization prog : {}", gridTravelMemoization(m, n, cache));
 
     }
