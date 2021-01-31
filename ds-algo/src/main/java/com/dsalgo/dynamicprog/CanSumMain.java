@@ -21,9 +21,10 @@ public class CanSumMain {
         int[] numbers = {5, 3, 4, 7};
         int targetSum = 7;
 
-        LOG.info("Hey..");
+        LOG.info("Start..");
         boolean bool = canSum(targetSum, numbers);
         LOG.info("CanSum of 7 : {}", bool);
+
 
         int[] numbers1 = {7, 14};
         targetSum = 300;
@@ -34,6 +35,7 @@ public class CanSumMain {
         bool = canSumMemoized(targetSum, numbers1, new HashMap<>());
         LOG.info("Memoized CanSum of 300 : {}", bool);
 
+
         int[] numbers2 = {8, 7, 17, 9, 19};
         targetSum = 420;
 
@@ -42,6 +44,7 @@ public class CanSumMain {
 
         bool = canSumMemoized(targetSum, numbers2, new HashMap<>());
         LOG.info("Memoized CanSum of 420 : {}", bool);
+        LOG.info("End");
 
     }
 

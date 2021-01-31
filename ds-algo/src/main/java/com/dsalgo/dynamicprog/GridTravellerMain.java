@@ -1,6 +1,5 @@
 package com.dsalgo.dynamicprog;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -47,6 +46,7 @@ public class GridTravellerMain {
 
         if(m == 0 || n == 0) return BigInteger.ZERO;
         if(m == 1 || n == 1) return BigInteger.ONE;
+
         // travelling to down or right
         return gridTravelSimple(m-1, n).add(gridTravelSimple(m, n-1));
     }
