@@ -31,7 +31,7 @@ public class CheckPangramMain {
         boolean isPangram = true;
 
         for (boolean b : markArray){
-            if(b == false){
+            if(!b){
                 isPangram = false;
                 break;
             }
