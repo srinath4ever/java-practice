@@ -1,4 +1,4 @@
-package com.core.java8.lambda;
+package com.core.java8.lambda.predicates;
 
 import com.core.java8.streams.to.Person;
 
@@ -8,12 +8,11 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 /**
- * Predicate is functional interface. It mean we can pass lambda expressions wherever predicate is expected
+ * Predicate is a functional interface which accepts any Type(T) and returns a boolean value.
  * 
  * @author srayabar
- *
  */
-public class PredicatesDemo {
+public class PredicatesMain {
 	
 	public static void main(String[] args) {
 		
@@ -31,9 +30,11 @@ public class PredicatesDemo {
 				new Person("sdsd", "srinath", 32)
 				);
 				
-		List<Person> filteredPersons = personsList.stream().filter(personAgePred).collect(Collectors.toList());
+		List<Person> filteredPersons = personsList.stream()
+				.filter(personAgePred)
+				.collect(Collectors.toList());
 		
-		filteredPersons.stream().forEach(p -> System.out.println(p.getFirstName()));
+		filteredPersons.forEach(p -> System.out.println(p.getFirstName()));
 	}
 
 }

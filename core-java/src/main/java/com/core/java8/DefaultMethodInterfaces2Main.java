@@ -29,11 +29,11 @@ public class DefaultMethodInterfaces2Main implements IDefaultInterface3{
 interface IDefaultInterface3 extends IDefaultInterface1{
 
     default void printMe() {
-        System.out.println("IDefaultInterface3 - printMe()");
+        System.out.println("IDefaultInterface3 - defaultMethod()");
     }
 
     default void printMe(String str){
-        System.out.println("IDefaultInterface3 - printMe(str) : " + str);
+        System.out.println("IDefaultInterface3 - defaultMethod(str) : " + str);
     }
 
 }

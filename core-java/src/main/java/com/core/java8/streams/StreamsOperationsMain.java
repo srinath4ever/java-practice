@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
  *
  * @author Srinath.Rayabarapu
  */
-public class PredicatesMain {
+public class StreamsOperationsMain {
 
     public static void main(String[] args) {
 
@@ -32,11 +32,11 @@ public class PredicatesMain {
         Predicate<Dish> booleanPredicate = dish -> dish.getCalories() > 300;
 
         //example 1
-        List<String> collect = menu.stream().
-                filter(booleanPredicate).
-                map(Dish::getName).//extracts only name
-                limit(3).//limits to first 3
-                collect(Collectors.toList()); // you can print here also
+        List<String> collect = menu.stream()
+                .filter(booleanPredicate).
+                map(Dish::getName)//extracts only name
+                .limit(3)//limits to first 3
+                .collect(Collectors.toList()); // you can print here also
 
         collect.stream().forEach(System.out::println);//prints the value
 

@@ -1,4 +1,4 @@
-package com.core.java8.lambda;
+package com.core.java8.lambda.predicates;
 
 import com.core.java8.streams.to.Person;
 

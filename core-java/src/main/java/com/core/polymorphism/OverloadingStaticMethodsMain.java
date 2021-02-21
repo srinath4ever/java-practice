@@ -20,11 +20,11 @@ public class OverloadingStaticMethodsMain {
 class StaticMethodsClass {
 
     public static void printMe() {
-        LogUtil.info("printMe 1");
+        LogUtil.info("defaultMethod 1");
     }
 
     public static boolean printMe(String str) {
-        LogUtil.info("printMe 2 " + str);
+        LogUtil.info("defaultMethod 2 " + str);
         return false;
     }
 
