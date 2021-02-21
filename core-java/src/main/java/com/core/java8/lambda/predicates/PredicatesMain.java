@@ -16,8 +16,10 @@ public class PredicatesMain {
 	
 	public static void main(String[] args) {
 		
-		//it's a boolean valued predicate
-		Predicate<Person> personAgePred = p -> p.getAge() > 21 && p.getFirstName().equalsIgnoreCase("rayabarapu");
+		//Predicate takes a param and returns a boolean
+		Predicate<Person> personAgePred = p ->
+				(p.getAge() > 21
+						&& p.getFirstName().equalsIgnoreCase("rayabarapu"));
 		
 		List<Person> personsList = Arrays.asList(
 				new Person("rayabarapu", "srinath", 32),

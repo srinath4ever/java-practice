@@ -8,6 +8,8 @@ repositories {
 
 dependencies {
 
+    compile project(":util")
+
     // mockito
     implementation 'org.mockito:mockito-all:2.0.2-beta'
 
