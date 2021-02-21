@@ -3,7 +3,7 @@ package com.strings.random;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RandomSentenses {
+public class RandomSentences {
 
     private String[] article = {"the", "a", "one", "some"};
     private String[] noun = {"boy", "girl", "dog", "town", "car"};
