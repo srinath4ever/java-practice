@@ -12,9 +12,12 @@ buildscript {
 plugins {
     id "java"
     id "com.github.johnrengelman.shadow" version "5.0.0"
+    id 'application'
 }
 
 apply plugin: "pl.allegro.tech.build.axion-release"
+
+mainClassName = "com.java.practice.Main"
 
 scmVersion {
     localOnly = true

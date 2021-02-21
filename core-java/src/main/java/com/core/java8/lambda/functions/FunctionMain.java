@@ -2,13 +2,14 @@ package com.core.java8.lambda.functions;
 
 import com.strings.random.RandomSentenses;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class FunctionMain {
 
     public static void main(String[] args) {
+        // Function:apply takes a param T and return a value R
         Function<String, Integer> stringLengthFunction = s -> s.length();
         System.out.println("stringLengthFunction.apply(\"srinath\") = " + stringLengthFunction.apply("srinath"));
 
@@ -19,9 +20,7 @@ public class FunctionMain {
     }
 
     private static <T, R> List<R> getRandomLengths(List<T> randomNames, Function<T, R> stringLengthFunction) {
-        List<R> returnList = new ArrayList<>();
-        randomNames.forEach(t -> returnList.add(stringLengthFunction.apply(t)));
-        return returnList;
+        return randomNames.stream().map(stringLengthFunction).collect(Collectors.toList());
     }
 
 }
