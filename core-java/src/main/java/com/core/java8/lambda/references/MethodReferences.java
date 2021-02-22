@@ -1,35 +1,27 @@
-package com.core.java8.lambda;
+package com.core.java8.lambda.references;
 
 import com.core.java8.streams.to.Person;
 
 /**
  * 
  * @author srayabar
- *
  */
 public class MethodReferences {
 	
 	public static void main(String[] args) {
 		
 		Something something = new Something();
-		
+
+		// object method references
 		FindFirster<String, String> find = something::startsWith;
 		
 		String convert = find.findFirst("ABC");
-		
 		System.out.println(convert);
-		
-		PersonFactory<Person> factory = Person::new;//looks for a constructor which is matching to interface method
-		
-		Person create = factory.create("Peter", "Pullamma");
-		
-		FirstName<String> fN = create::getFirstName;
-		System.out.println(fN.getName());
-		
-		//lambda expression is a runnable object/piece of code
-		//Thread t1 = new Thread(() -> printMessage());
-		
-		//can use only in case of pass through
+
+		// constructor references - looks for a constructor which is matching to interface method
+		PersonFactory<Person> factory = Person::new;
+
+		//static method references - can use only in case of pass through
 		Thread t1 = new Thread(MethodReferences::printMessage);
 		t1.start();
 		
