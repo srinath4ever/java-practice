@@ -16,7 +16,7 @@ public class ConsumerMain {
     }
 
     private static <T> void printList(List<T> intList, Consumer<T> intConsumer) {
-        intList.forEach(intConsumer::accept);
+        intList.forEach(intConsumer);
     }
 
 }

@@ -17,7 +17,7 @@ plugins {
 
 apply plugin: "pl.allegro.tech.build.axion-release"
 
-mainClassName = "com.java.practice.Main"
+mainClassName = "com.aaa.FileUtilMain"
 
 scmVersion {
     localOnly = true
@@ -48,6 +48,9 @@ subprojects {
 
         implementation "ch.qos.logback:logback-classic:1.2.3"
         implementation "net.logstash.logback:logstash-logback-encoder:6.4"
+
+        // Commons IO
+        implementation 'commons-io:commons-io:2.6'
 
         testAnnotationProcessor "org.projectlombok:lombok:1.18.12"
         testImplementation "org.projectlombok:lombok:1.18.12"

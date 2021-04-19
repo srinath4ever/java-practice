@@ -24,7 +24,7 @@ public class GridTravellerMain {
     public static void main(String[] args) {
 
         // m*n input matrix
-        int m = 14, n =14;
+        int m = 5, n =5;
 
         Map<String, BigInteger> cache = new HashMap<>();
 
@@ -46,6 +46,8 @@ public class GridTravellerMain {
 
         if(m == 0 || n == 0) return BigInteger.ZERO;
         if(m == 1 || n == 1) return BigInteger.ONE;
+
+        System.out.println("m = " + m + ", n = " + n);
 
         // travelling to down or right
         return gridTravelSimple(m-1, n).add(gridTravelSimple(m, n-1));

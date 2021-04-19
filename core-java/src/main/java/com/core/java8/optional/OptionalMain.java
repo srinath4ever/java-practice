@@ -12,7 +12,11 @@ import java.util.Optional;
 public class OptionalMain {
 	
 	public static void main(String[] args) {
-		
+
+		Long aLong = Long.valueOf("15");
+		System.out.println(aLong);
+
+
 		Optional<List<student>> studentsListOptional = fetchStudentsList();
 
 		List<student> studentList = new ArrayList<>();
