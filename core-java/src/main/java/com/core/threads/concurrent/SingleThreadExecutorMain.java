@@ -15,7 +15,7 @@ public class SingleThreadExecutorMain {
         // cann't alter threads pool size - it's always 1
         ExecutorService service = Executors.newSingleThreadExecutor();
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 1; i <= 10; i++) {
             service.submit(new TestTask(i));
         }
 

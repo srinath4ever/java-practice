@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+group 'com.practice'
+version '0.1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(":util")
+
+    implementation 'junit:junit:4.12'
+}
+
+test {
+    useJUnitPlatform()
+}

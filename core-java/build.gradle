@@ -8,14 +8,7 @@ repositories {
 
 dependencies {
 
-    // hibernate
-    implementation 'org.hibernate:hibernate-core:4.3.6.Final'
-    implementation 'org.hibernate:hibernate-entitymanager:4.3.6.Final'
-    implementation 'org.hibernate:hibernate-osgi:4.3.6.Final'
-    implementation 'org.hibernate:hibernate-envers:4.3.6.Final'
-    implementation 'org.hibernate:hibernate-c3p0:4.3.6.Final'
-    implementation 'org.hibernate:hibernate-proxool:4.3.6.Final'
-    implementation 'org.hibernate:hibernate-ehcache:4.3.6.Final'
+    compile project(":util")
 
     // mockito
     implementation 'org.mockito:mockito-all:2.0.2-beta'
@@ -25,11 +18,4 @@ dependencies {
     implementation 'commons-validator:commons-validator:1.6'
     implementation 'org.json:json:20151123'
     implementation 'junit:junit:4.12'
-
-    //lombok
-    compileOnly "org.projectlombok:lombok:$lombokVersion"
-    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
-    compileOnly "org.projectlombok:lombok:$lombokVersion"
-    testAnnotationProcessor "org.projectlombok:lombok:$lombokVersion"
-
 }

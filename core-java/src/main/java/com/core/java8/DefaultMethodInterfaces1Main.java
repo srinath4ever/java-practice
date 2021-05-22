@@ -39,11 +39,11 @@ public class DefaultMethodInterfaces1Main implements IDefaultInterface1, IDefaul
 interface IDefaultInterface1 {
 	
 	default void printMe() {
-		System.out.println("IDefaultInterface1 - printMe()");
+		System.out.println("IDefaultInterface1 - defaultMethod()");
 	}
 
 	default void printMe(String str){
-		System.out.println("IDefaultInterface1 - printMe(str) : " + str);
+		System.out.println("IDefaultInterface1 - defaultMethod(str) : " + str);
 	}
 
 }
@@ -51,11 +51,11 @@ interface IDefaultInterface1 {
 interface IDefaultInterface2 {
 
 	default void printMe() {
-		System.out.println("IDefaultInterface2 - printMe()");
+		System.out.println("IDefaultInterface2 - defaultMethod()");
 	}
 
 	default void printMe(String str){
-		System.out.println("IDefaultInterface2 - printMe(str) : " + str);
+		System.out.println("IDefaultInterface2 - defaultMethod(str) : " + str);
 	}
 
 }

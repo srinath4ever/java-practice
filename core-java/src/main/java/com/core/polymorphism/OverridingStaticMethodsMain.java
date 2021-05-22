@@ -35,6 +35,6 @@ class Super {
 
 class Base extends Super {
     public static void printMe() {
-        LogUtil.info("Base class print method callded.");
+        LogUtil.info("Base class print method called.");
     }
 }

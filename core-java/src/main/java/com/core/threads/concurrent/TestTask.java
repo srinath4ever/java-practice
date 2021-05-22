@@ -15,12 +15,11 @@ public class TestTask implements Runnable{
 	
 	@Override
 	public void run() {
-		System.out.println("Start executing of task number - " + this.number);
+		System.out.println("Executing task number - " + this.number);
 		try {
 			Thread.sleep(1000);//simulating some operation
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		System.out.println("End executing of task number - " + this.number);
 	}
 }

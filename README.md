@@ -4,8 +4,10 @@
 
 
 
-TODO : 
-1. Travis CI Integration with Github tags push
+TODO :
+1. Have a common shared logging - remove duplicate config files
+2. Fix the shared libraries and keep only scoped ones
+
 
 
 ```

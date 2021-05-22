@@ -15,25 +15,28 @@ import java.util.Map;
  * @author Srinath.Rayabarapu
  *
  */
-public final class ImmutableMain {
+public class ImmutableMain {
 
 	public static void main(String[] args) {
 
-		ImmutableMain immutable1 = new ImmutableMain("one", "type1", new HashMap<>());
+		ImmutableClass immutable1 = new ImmutableClass("one", "type1", new HashMap<>());
 		System.out.println(immutable1.hashCode());
-		immutable1 = new ImmutableMain("one", "type1", new HashMap<>());
+		immutable1 = new ImmutableClass("one", "type1", new HashMap<>());
 		System.out.println(immutable1.hashCode());
 
 		//these two objects cann't be modified once they created
 
-
 	}
+
+}
+
+final class ImmutableClass{
 
 	private final String className;
 	private final String classType;
 	private final HashMap<String,String> testMap;
 
-	public ImmutableMain(String name, String type, Map<String,String> map) {
+	public ImmutableClass(String name, String type, Map<String,String> map) {
 		this.className = name;
 		this.classType = type;
 
