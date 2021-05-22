@@ -16,4 +16,7 @@ public class LogUtil {
         LOG.info(infoString);
     }
 
+    public static void info(String s, Object obj) {
+        LOG.info(s, obj);
+    }
 }
