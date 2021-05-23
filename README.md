@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/SrinathRayabarapu/java-practice.svg?branch=master)](https://travis-ci.org/SrinathRayabarapu/java-practice)
 
-
+> gradle clean build shadowJar
 
 TODO :
 1. Have a common shared logging - remove duplicate config files
