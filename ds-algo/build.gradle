@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    compile project(":util")
+    implementation project(":util")
 
     implementation 'junit:junit:4.12'
 }
