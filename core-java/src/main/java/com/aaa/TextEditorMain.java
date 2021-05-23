@@ -19,7 +19,7 @@ public class TextEditorMain {
         wrapText1(inputText, wrapLength);
     }
 
-    private static void wrapText1(String inputText, int wrapLength) {
+    public static void wrapText1(String inputText, int wrapLength) {
         String temp = "";
         for (int i = 0; i < inputText.length(); i++) {
             if(i == wrapLength){
@@ -28,7 +28,7 @@ public class TextEditorMain {
         }
     }
 
-    private static void wrapText(String inputText, int wrapLength) {
+    public static void wrapText(String inputText, int wrapLength) {
         // only wrap in case it's larger
         String returnString = "";
         String[] stringArray = inputText.split(" ");
