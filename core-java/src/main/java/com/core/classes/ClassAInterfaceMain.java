@@ -3,9 +3,9 @@ package com.core.classes;
 /**
  * Assign Day4 - Prog4
  */
-public class ClassAInterfaceDemo implements InterfaceFour {
+public class ClassAInterfaceMain implements InterfaceFour {
 	public static void main(String[] args) {
-		ClassAInterfaceDemo aInterfaceDemo = new ClassAInterfaceDemo();
+		ClassAInterfaceMain aInterfaceDemo = new ClassAInterfaceMain();
 		aInterfaceDemo.MethodOne();
 		aInterfaceDemo.MethodTwo();
 		aInterfaceDemo.MethodThree();
