@@ -23,7 +23,7 @@ public class FibonacciSeriesThreadSearchMain {
 	*/
 	
 	public static void main(String[] args) {
-		int n = 3;		
+		int n = 3;
 		FibonacciSeriesRecursion seriesRecursion = new FibonacciSeriesRecursion(n);
 		Thread thread = new Thread(seriesRecursion);
 		thread.start();
