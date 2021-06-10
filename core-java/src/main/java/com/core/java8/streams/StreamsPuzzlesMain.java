@@ -1,11 +1,14 @@
 package com.core.java8.streams;
 
+import com.core.java8.streams.to.Student;
+import com.core.utils.PrintUtils;
 import com.mockito.ex1.Stock;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * all streams related puzzles
@@ -16,7 +19,34 @@ public class StreamsPuzzlesMain {
 
     public static void main(String[] args) {
 
-        findMaxStocksForLast7Days();
+//        findMaxStocksForLast7Days();
+
+        findTopNScoringStudentsSorted();
+
+    }
+
+    private static void findTopNScoringStudentsSorted() {
+
+        System.out.println("In findTopNScoringStudentsSorted");
+
+        List<Student> studentsList = List.of(
+                new Student(1, "Srinath", 50),
+                new Student(1, "Shubha", 60),
+                new Student(1, "Viyansh", 70),
+                new Student(1, "Hitarsh", 80),
+                new Student(1, "Amma", 90),
+                new Student(1, "Dad", 100),
+                new Student(1, "Sreekanth", 40)
+        );
+
+        List<Student> sortedStudents = studentsList.stream().sorted((s1, s2) -> {
+            if (s1.getScore() == s2.getScore())
+                return 0;
+            else
+                return (s1.getScore() < s2.getScore()) ? 1 : -1;
+        }).limit(3).collect(Collectors.toList());
+
+        PrintUtils.printList(sortedStudents);
 
     }
 
