@@ -14,8 +14,8 @@ public class DeadLockByNonOrderedObjectsMain {
 
     public static void main(String[] args) {
 
-        Object train = new Object(); // this object should be assumed as train
-        Object compartment = new Object();// this has to be assumed as a compartment
+        var train = new Object(); // this object should be assumed as train
+        var compartment = new Object();// this has to be assumed as a compartment
 
         Thread t1 = new CancelTicket(train, compartment);
         Thread t2 = new BookTicket(train, compartment);
