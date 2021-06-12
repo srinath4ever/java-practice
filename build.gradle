@@ -18,7 +18,7 @@ apply plugin: "pl.allegro.tech.build.axion-release"
 jar {
     manifest {
         attributes(
-                'Main-Class': "com.main.App"
+                'Main-Class': "com.core.cowin.CoWinApp"
         )
     }
 }
